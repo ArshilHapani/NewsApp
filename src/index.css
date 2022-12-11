@@ -1,6 +1,45 @@
-/* Just an comment added */
-.arshil{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+* {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+
+/*--------------------------- navbar Style----------------------------  */
+header {
+  display: flex;
+  padding: 2vh  3vh;
+  justify-content: center;
+  background-color: black;
+  flex-direction: column-reverse;
+  color: #fff;
+}
+.main ul {
+  flex-direction: row-reverse;
+  list-style: none;
+  display: flex;
+  align-items: center;
+}
+.main ul a {
+  text-decoration: none;
+  color: #fff;
+  transition: .25s ease-in-out;
+  -webkit-transition: .25s ease-in-out;
+  -moz-transition: .25s ease-in-out;
+  -ms-transition: .25s ease-in-out;
+  -o-transition: .25s ease-in-out;
+}
+.main ul a:hover{
+  color: #cdcbcb;
+}
+.left{
+  float: left;  
+  font-weight: 700;  
+}
+.right{
+  float: right;
+  width: fit-content;
+}
+.main .right li {
+  padding-left: 4vw;
 }

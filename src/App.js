@@ -1,4 +1,3 @@
-import './App.css';
 import Navbar from './Components/navbar';
 
 //! To make quick react class based component type 'rcc'
