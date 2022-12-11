@@ -4,7 +4,7 @@ export default class navbar extends Component {
         return (
             <>
                 <header>
-                    <nav className="main">                                            
+                    <nav className="main">
                         <ul style={{ paddingLeft: '0', marginBottom: '0' }} className='right'>
                             <a href="/news"><li>News</li></a>
                             <a href="/about"><li>About</li></a>
