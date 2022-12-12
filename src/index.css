@@ -10,15 +10,13 @@ header {
   display: flex;
   padding: 3vh;
   justify-content: center;
-  background-color: black;
+  background-color: #0f0252;
   flex-direction: column-reverse;
   color: #fff;
 }
 .main ul {
-  flex-direction: row-reverse;
   list-style: none;
   display: flex;
-  align-items: center;
 }
 .main ul a {
   text-decoration: none;
@@ -35,10 +33,10 @@ header {
 .left {
   float: left;
   font-weight: 700;
+  /* font-size: 1.5em; */
 }
 .right {
   float: right;
-  width: fit-content;
 }
 .main .right li {
   padding-left: 4vw;
@@ -55,7 +53,6 @@ header {
   flex-wrap: wrap;
   justify-content: space-evenly;
 }
-/* TODO Making flexbox responsive for cards in media query */
 .custom-card {
   overflow: auto;
   border-radius: 2vh;
@@ -74,13 +71,13 @@ header {
 }
 /* -------Small Screens ----------- */
 @media only screen and (max-width: 600px) {
-  .custom-card{
-    width:80vw;
+  .custom-card {
+    width: 80vw;
   }
 }
 /* -------Mediums/Large Screens ----------- */
-@media only screen and (min-width: 600px) and (max-width:800px){
-  .custom-card{
+@media only screen and (min-width: 600px) and (max-width: 800px) {
+  .custom-card {
     width: 40vw;
   }
 }
@@ -124,6 +121,49 @@ header {
 .news-dtl-btn:hover {
   background-color: #034bb8;
 }
+
+/* ------------------------Next Previous Buttons------------------------------------------------------ */
+.nxt-prev-cont {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.nxt-prev {
+  font-size: 5vh;
+  cursor: pointer;
+  margin: 5vh;
+  text-decoration: none;  
+  background-color: transparent;    
+  border: 0;
+  color: #0f0252;
+  padding: 1.5vh 3vh;
+  border-radius: 0.7vh;
+  -webkit-border-radius: 0.7vh;
+  -moz-border-radius: 0.7vh;
+  -ms-border-radius: 0.7vh;
+  -o-border-radius: 0.7vh;
+  transition: 0.2s ease-in-out;
+  -webkit-transition: 0.2s ease-in-out;
+  -moz-transition: 0.2s ease-in-out;
+  -ms-transition: 0.2s ease-in-out;
+  -o-transition: 0.2s ease-in-out;
+}
+.nxt-prev:disabled{
+  display: none;
+}
+.nxt-prev:hover:nth-child(1) {
+  border: 1px solid #0b5ed7;
+  transform: translateX(-4px);
+  -webkit-transform: translateX(-4px);
+  -moz-transform: translateX(-4px);
+  -ms-transform: translateX(-4px);
+  -o-transform: translateX(-4px);
+}
+.nxt-prev:hover:nth-child(2) {
+  border: 1px solid #0b5ed7;
+  transform: translateX(4px); 
+}
+
 /* --------------------Top Title Design------------------------------ */
 .Top-hd-ttl {
   margin: 3vh 0vh;
