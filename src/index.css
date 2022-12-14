@@ -1,10 +1,25 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&family=Pacifico&family=Work+Sans:wght@900&display=swap");
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Montserrat', sans-serif;
 }
-
+/* --------------------------------Themes--------------------------------------- */
+.light-theme-container{
+  background-color: #efebeb !important;
+  color: #0f0252 !important;
+}
+.dark-theme-container{
+  background-color: black !important;
+  color:#fff !important;
+}
+.light-theme-text{
+  color: black !important;
+}
+.dark-theme-text{
+  color: #fff !important;
+}
 /*--------------------------- navbar Style----------------------------  */
 header {
   display: flex;
@@ -41,9 +56,60 @@ header {
 .main .right li {
   padding-left: 4vw;
 }
+.btn-theme-ctr{
+  /* display: inline-block; */
+  /* position: relative; */
+  /* left: 40%;   */
+  /* justify-self: center; */
+  padding-left: 3vw;
+}
+.theme-ctr {
+  cursor: pointer;
+  display: block;
+  background-color: transparent;
+  border: none;
+  color: #fff;
+  font-size: 1.38em;
+  align-self: center;
+  transition: .3s ease-in-out;
+  -webkit-transition: .3s ease-in-out;
+  -moz-transition: .3s ease-in-out;
+  -ms-transition: .3s ease-in-out;
+  -o-transition: .3s ease-in-out;
+}
+.theme-ctr:hover{
+  transform: rotateY(360deg);
+  transform-origin:center ;
+  -webkit-transform: rotateY(360deg);
+  -moz-transform: rotateY(360deg);
+  -ms-transform: rotateY(360deg);
+  -o-transform: rotateY(360deg);
+}
+.theme-ctr:focus{
+  outline: none;
+  border: none;
+}
+.theme-ctr:active{
+  transform:rotateX(180deg);
+  -webkit-transform:rotateX(180deg);
+  -moz-transform:rotateX(180deg);
+  -ms-transform:rotateX(180deg);
+  -o-transform:rotateX(180deg);
+}
 /* ------------------- ScrollBar Design --------------------*/
 ::-webkit-scrollbar {
-  width: 0;
+  width: 0.3vw;
+}
+::-webkit-scrollbar-track {
+  background-color: #0f0252;
+}
+::-webkit-scrollbar-thumb {
+  background-color: #fff;
+  border-radius: 13px;
+  -webkit-border-radius: 13px;
+  -moz-border-radius: 13px;
+  -ms-border-radius: 13px;
+  -o-border-radius: 13px;
 }
 
 /* -------------------Card Design -------------------------------- */
@@ -54,13 +120,12 @@ header {
   justify-content: space-evenly;
 }
 .custom-card {
-  overflow: auto;
   border-radius: 2vh;
-  height: 58vh;
-  /* max-height: fit-content; */
+  height: 68vh;
   width: 25vw;
   background-color: #efebeb;
   margin: 3vh;
+  color: #0f0252;
   box-shadow: -8px 8px 17px -2px rgba(194, 177, 177, 0.75);
   -webkit-box-shadow: -8px 8px 17px -2px rgba(194, 177, 177, 0.75);
   -moz-box-shadow: -8px 8px 17px -2px rgba(194, 177, 177, 0.75);
@@ -70,15 +135,17 @@ header {
   -o-border-radius: 2vh;
 }
 /* -------Small Screens ----------- */
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 550px) {
   .custom-card {
     width: 80vw;
+    height: 53vh;
   }
 }
 /* -------Mediums/Large Screens ----------- */
-@media only screen and (min-width: 600px) and (max-width: 800px) {
+@media only screen and (min-width: 550px) and (max-width: 800px) {
   .custom-card {
     width: 40vw;
+    height: 70vh;
   }
 }
 
@@ -87,6 +154,23 @@ header {
   border-top-left-radius: inherit;
   border-top-right-radius: inherit;
   width: 100%;
+  transition: 0.3s ease-in-out;
+  -webkit-transition: 0.3s ease-in-out;
+  -moz-transition: 0.3s ease-in-out;
+  -ms-transition: 0.3s ease-in-out;
+  -o-transition: 0.3s ease-in-out;
+}
+.custom-card img:hover {
+  transform: scale(1.2);
+  -webkit-transform: scale(1.2);
+  -moz-transform: scale(1.2);
+  -ms-transform: scale(1.2);
+  -o-transform: scale(1.2);
+  border-radius: inherit;
+  -webkit-border-radius: inherit;
+  -moz-border-radius: inherit;
+  -ms-border-radius: inherit;
+  -o-border-radius: inherit;
 }
 .custom-card .card-bdy {
   padding: 2.5vh;
@@ -132,8 +216,8 @@ header {
   font-size: 5vh;
   cursor: pointer;
   margin: 5vh;
-  text-decoration: none;  
-  background-color: transparent;    
+  text-decoration: none;
+  background-color: transparent;
   border: 0;
   color: #0f0252;
   padding: 1.5vh 3vh;
@@ -146,9 +230,9 @@ header {
   -webkit-transition: 0.2s ease-in-out;
   -moz-transition: 0.2s ease-in-out;
   -ms-transition: 0.2s ease-in-out;
-  -o-transition: 0.2s ease-in-out;
+  -o-transition: 0.2s ease-in-out;  
 }
-.nxt-prev:disabled{
+.nxt-prev:disabled {
   display: none;
 }
 .nxt-prev:hover:nth-child(1) {
@@ -161,7 +245,7 @@ header {
 }
 .nxt-prev:hover:nth-child(2) {
   border: 1px solid #0b5ed7;
-  transform: translateX(4px); 
+  transform: translateX(4px);
 }
 
 /* --------------------Top Title Design------------------------------ */
@@ -169,4 +253,36 @@ header {
   margin: 3vh 0vh;
   font-size: 5vh;
   font-weight: 700;
+}
+
+/* ------------------------------Loader-------------------- */
+.loader-wrapper {
+  width: 100px;
+  height: 100px;
+  background-color: transparent;
+}
+.loader-wrapper .loader {
+  width: 100%;
+  height: 100%;
+  border: 10px solid transparent;
+  border-radius: 50%;
+  animation: rotate 5s linear infinite;
+}
+.loader-wrapper .loader-outer {
+  border-top-color: #4bc8eb;
+  border-bottom-color: #f13a8f;
+  animation-duration: 4s;
+}
+.loader-wrapper .loader-inner {
+  border-top-color: #36f372;
+  border-bottom-color: black;
+}
+
+@keyframes rotate {
+  0% {
+    transform: scale(1) rotate(360deg);
+  }
+  50% {
+    transform: scale(0.6) rotate(-360deg);
+  }
 }

@@ -1,0 +1,17 @@
+PS D:\Arshil's workplace\React JS Practice\NewsApp> git commit -a -p  -m "Done for the day 12/12/22"       
+fatal: options '-a/--all' and '--interactive/-p/--patch' cannot be used together
+PS D:\Arshil's workplace\React JS Practice\NewsApp> git push
+Enumerating objects: 17, done.
+Counting objects: 100% (17/17), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (9/9), done.
+Writing objects: 100% (9/9), 1.79 KiB | 458.00 KiB/s, done.
+Total 9 (delta 7), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (7/7), completed with 7 local objects.
+To https://github.com/ArshilHapani/NewsApp.git
+   9b653f4..5d1d7e7  master -> master
+PS D:\Arshil's workplace\React JS Practice\NewsApp> 
+
+
+
+cd "D:\Arshil's workplace\React JS Practice\NewsApp" Path
