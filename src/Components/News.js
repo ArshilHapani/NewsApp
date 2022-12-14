@@ -13,21 +13,22 @@ export default class News extends Component {
       page: 1
     }
   }
-
-  async componentDidMount() { //! It runs exactly after render method is called     
-    let url = `https://newsapi.org/v2/top-headlines?country=in&apiKey=769f5fabe05842a79bf30e2124a5f4ca&page=1&pageSize=${this.props.pageSize}`
-    this.setState({ loading: true });
-    let data = await fetch(url);
-    let parseData = await data.json();
-    this.setState({ //!Changing the value of state
-      articles: parseData.articles,
-      totalResults: parseData.totalResults,
-      loading: false
-    })
-  }
+ 
+  
+  // async componentDidMount() { //! It runs exactly after render method is called     
+  //   let url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=769f5fabe05842a79bf30e2124a5f4ca&page=1&pageSize=${this.props.pageSize}`
+  //   this.setState({ loading: true });
+  //   let data = await fetch(url);
+  //   let parseData = await data.json();
+  //   this.setState({ //!Changing the value of state
+  //     articles: parseData.articles,
+  //     totalResults: parseData.totalResults,
+  //     loading: false
+  //   })
+  // }
 
   handlePrevClick = async () => {
-    let url = `https://newsapi.org/v2/top-headlines?country=in&apiKey=769f5fabe05842a79bf30e2124a5f4ca&page=${this.state.page - 1}&pageSize=${this.props.pageSize}`
+    let url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=769f5fabe05842a79bf30e2124a5f4ca&page=${this.state.page - 1}&pageSize=${this.props.pageSize}`
     this.setState({ loading: true });
     let data = await fetch(url);
     let parseData = await data.json();
@@ -42,7 +43,7 @@ export default class News extends Component {
   handleNextClick = async () => {
     if (this.state.page + 1 > Math.ceil(this.state.totalResults / this.props.pageSize)) { }
     else {
-      let url = `https://newsapi.org/v2/top-headlines?country=in&apiKey=769f5fabe05842a79bf30e2124a5f4ca&page=${this.state.page + 1}&pageSize=${this.props.pageSize}`
+      let url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=769f5fabe05842a79bf30e2124a5f4ca&page=${this.state.page + 1}&pageSize=${this.props.pageSize}`
       let data = await fetch(url);
       this.setState({ loading: true });
       let parseData = await data.json();
@@ -77,7 +78,9 @@ export default class News extends Component {
             {this.state.loading && <Spinner />}
           </div>
           <div className="nxt-prev-cont">
-            <button disabled={this.state.page <= 1} className="nxt-prev" onClick={this.handlePrevClick}><ion-icon name="chevron-back-outline"></ion-icon> </button>
+            <button disabled={this.state.page <= 1} className={`nxt-prev ${this.props.mode === 'dark' ? 'dark-theme-text' : 'light-theme-text'}`} onClick={this.handlePrevClick}><ion-icon name="chevron-back-outline"></ion-icon> </button>
+
+
             <button disabled={this.state.page + 1 > Math.ceil(this.state.totalResults / this.props.pageSize)} className={`nxt-prev ${this.props.mode === 'dark' ? 'dark-theme-text' : 'light-theme-text'}`} onClick={this.handleNextClick}> <ion-icon name="chevron-forward-outline"></ion-icon></button>
           </div>
         </div>

@@ -2,8 +2,19 @@ import Navbar from './Components/navbar';
 //! To make quick react class based component type 'rcc'
 import React, { Component } from 'react'
 import News from './Components/News';
+import PropTypes from 'prop-types'
+
 
 export default class App extends Component {
+  static propTypes = {
+    country:PropTypes.string,
+    category:PropTypes.string,
+  }
+  static defaultProps = {
+    country:'in',
+    pageSize:'5',
+    category:'general',
+  }
   constructor() {
     super();
     this.state = {
@@ -33,7 +44,11 @@ export default class App extends Component {
         <div>
           <Navbar ThemeToggle={this.ThemeToggle} mode={this.state.mode} />
           <News
-            pageSize='5' mode={this.state.mode} />
+            pageSize='9'
+            mode={this.state.mode} 
+            country ='in'
+            category = 'technology'
+            />
         </div>
       </>
     )
