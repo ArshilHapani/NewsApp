@@ -199,10 +199,10 @@ header {
 @media only screen and (max-width: 550px) {
   header{
     padding: 2.5vh;
-  }
+  }  
   .right{
     display: none;
-    height: 20vh;
+    height: 20.1vh;
     position: relative;   
     align-items: flex-start;  
     flex-direction: column-reverse;  
@@ -222,7 +222,10 @@ header {
   .toggle-btn-ctn{
     display: flex;    
   }
-    
+  .dropDown {
+    display: none;
+    padding-left:5vw ;    
+  }
   .custom-card {    
     width: 80vw;
     height: 53vh;
@@ -362,7 +365,7 @@ header {
 }
 .loader-wrapper .loader-inner {
   border-top-color: #36f372;
-  border-bottom-color: black;
+  border-bottom-color: coral;
 }
 
 @keyframes rotate {

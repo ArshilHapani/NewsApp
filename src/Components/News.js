@@ -15,17 +15,17 @@ export default class News extends Component {
   }
  
   
-  // async componentDidMount() { //! It runs exactly after render method is called     
-  //   let url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=769f5fabe05842a79bf30e2124a5f4ca&page=1&pageSize=${this.props.pageSize}`
-  //   this.setState({ loading: true });
-  //   let data = await fetch(url);
-  //   let parseData = await data.json();
-  //   this.setState({ //!Changing the value of state
-  //     articles: parseData.articles,
-  //     totalResults: parseData.totalResults,
-  //     loading: false
-  //   })
-  // }
+  async componentDidMount() { //! It runs exactly after render method is called     
+    let url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=769f5fabe05842a79bf30e2124a5f4ca&page=1&pageSize=${this.props.pageSize}`
+    this.setState({ loading: true });
+    let data = await fetch(url);
+    let parseData = await data.json();
+    this.setState({ //!Changing the value of state
+      articles: parseData.articles,
+      totalResults: parseData.totalResults,
+      loading: false
+    })
+  }
 
   handlePrevClick = async () => {
     let url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=769f5fabe05842a79bf30e2124a5f4ca&page=${this.state.page - 1}&pageSize=${this.props.pageSize}`
