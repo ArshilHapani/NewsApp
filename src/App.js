@@ -45,10 +45,12 @@ export default class App extends Component {
     }
   }
   // name = 'Arshil' //? We can define direct class variable without using let or var
+   pageSize = 8;
   render() {
     return (
       <>
         <div>
+          {/*v//* Here we have use the router because we navigate particular component by the Link tag in navbar and then from different paths we target different category ....... Hand's off Harry 🙌  */}
           <Router>
             <Navbar ThemeToggle={this.ThemeToggle} mode={this.state.mode} />
             {/* //! Here we need to do force remount component 
@@ -56,7 +58,7 @@ export default class App extends Component {
             <Routes>
               <Route exact path='/'
                 element={<News
-                  pageSize='9'
+                  pageSize={this.pageSize}
                   mode={this.state.mode}
                   country='in'
                   category='general'
@@ -65,7 +67,7 @@ export default class App extends Component {
               />
                 <Route exact path='/business'
                   element={<News
-                    pageSize='9'
+                    pageSize={this.pageSize}
                     mode={this.state.mode}
                     country='in'
                     category='business'
@@ -74,7 +76,7 @@ export default class App extends Component {
                 />
                 <Route exact path='/entertaiment'
                   element={<News
-                    pageSize='9'
+                    pageSize={this.pageSize}
                     mode={this.state.mode}
                     country='in'
                     category='entertaiment'
@@ -83,7 +85,7 @@ export default class App extends Component {
                 />
                 <Route exact path='/general'
                   element={<News
-                    pageSize='9'
+                    pageSize={this.pageSize}
                     mode={this.state.mode}
                     country='in'
                     category='general'
@@ -92,7 +94,7 @@ export default class App extends Component {
                 />
                 <Route exact path='/health'
                   element={<News
-                    pageSize='9'
+                    pageSize={this.pageSize}
                     mode={this.state.mode}
                     country='in'
                     category='health'
@@ -101,7 +103,7 @@ export default class App extends Component {
                 />
                 <Route exact path='/science'
                   element={<News
-                    pageSize='9'
+                    pageSize={this.pageSize}
                     mode={this.state.mode}
                     country='in'
                     category='science'
@@ -110,7 +112,7 @@ export default class App extends Component {
                 />
                 <Route exact path='/technology'
                   element={<News
-                    pageSize='9'
+                    pageSize={this.pageSize}
                     mode={this.state.mode}
                     country='in'
                     category='technology'

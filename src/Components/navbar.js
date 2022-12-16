@@ -40,7 +40,7 @@ export default class navbar extends Component {
                         </ul>
 
                         <ul className='left' style={{ paddingLeft: '0', marginBottom: '0' }}>
-                            <h1><span className='left'><b><Link to="/home">News-Crew</Link></b></span></h1>
+                            <h1><span className='left'><b><Link to="/">News-Crew</Link></b></span></h1>
                             <div className="dropDown" id='dr-d-lst'>
                                 <li className='dropDownBtn'>Category</li>
                                 <div className="dropDownContent">

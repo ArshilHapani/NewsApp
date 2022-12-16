@@ -8,10 +8,10 @@ export default class Spinner extends Component {
       //   <img src={loading} alt="Loading..." />        
       // </div>
       <div style={{height:'70vh',display:'flex',alignItems:'center'}}>
-        <div className="loader-wrapper">
-          <div className="loader loader-outer">
-            <div className="loader loader-inner"></div>
-          </div>
+        <div className="loader">
+          <div className="loader-item"></div>
+          <div className="loader-item"></div>
+          <div className="loader-item"></div>
         </div>
       </div>
     )
