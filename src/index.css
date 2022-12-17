@@ -117,6 +117,11 @@ header {
 }
 .dropDownBtn {
   color: #efebeb;
+  cursor: pointer;
+  transition: 0.4s ease-in-out;
+}
+.dropDownBtn:hover{
+  color: #cdcbcb;
 }
 .dropDownContent {
   display: none;
@@ -132,11 +137,15 @@ header {
   -ms-border-radius: 4vh;
   -o-border-radius: 4vh;
 }
-.dropDownContent a {
+.dropDownContent a{
   color: #ece9e9 !important;
   padding: 2vh 0.4vw;
   text-decoration: none;
+  cursor: pointer;
   display: block;
+}
+.dropDownContent li:hover{
+  color: #cdcbcb;
 }
 .dropDown:hover .dropDownContent {
   display: block;
@@ -184,6 +193,10 @@ header {
 .custom-card::-webkit-scrollbar {
   width: 0;
 }
+ .badge{
+  font-size: 2vh;
+  
+}
 .toggle-btn-ctn {
   display: none;
 }
@@ -206,7 +219,7 @@ header {
 }
 /* -------Small Screens ----------- */
 @media only screen and (max-width: 550px) {
-  header {
+  /* header {
     padding: 2.5vh;
   }
   .right {
@@ -233,7 +246,7 @@ header {
   .dropDown {
     display: none;
     padding-left: 5vw;
-  }
+  } */
   .custom-card {
     width: 80vw;
     height: 70vh;

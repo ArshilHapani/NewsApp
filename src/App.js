@@ -1,7 +1,8 @@
 import Navbar from './Components/navbar';
 //! To make quick react class based component type 'rcc'
 import React, { Component } from 'react'
-import News from './Components/News';
+// import News from './Components/News';
+import News1 from './Components/News1';
 import PropTypes from 'prop-types'
 import {
   BrowserRouter as Router,
@@ -43,10 +44,10 @@ export default class App extends Component {
         mode: 'light',
       })
     }
-  }
+  }  
   // name = 'Arshil' //? We can define direct class variable without using let or var
-   pageSize = 8;
-  render() {
+  //  pageSize = 8;
+  render() {    
     return (
       <>
         <div>
@@ -57,7 +58,7 @@ export default class App extends Component {
             //? TO do thet we use key property which is used to identify unique component names */}
             <Routes>
               <Route exact path='/'
-                element={<News
+                element={<News1
                   pageSize={this.pageSize}
                   mode={this.state.mode}
                   country='in'
@@ -66,7 +67,7 @@ export default class App extends Component {
                 />}
               />
                 <Route exact path='/business'
-                  element={<News
+                  element={<News1
                     pageSize={this.pageSize}
                     mode={this.state.mode}
                     country='in'
@@ -75,7 +76,7 @@ export default class App extends Component {
                   />}
                 />
                 <Route exact path='/entertaiment'
-                  element={<News
+                  element={<News1
                     pageSize={this.pageSize}
                     mode={this.state.mode}
                     country='in'
@@ -84,7 +85,7 @@ export default class App extends Component {
                   />}
                 />
                 <Route exact path='/general'
-                  element={<News
+                  element={<News1
                     pageSize={this.pageSize}
                     mode={this.state.mode}
                     country='in'
@@ -93,7 +94,7 @@ export default class App extends Component {
                   />}
                 />
                 <Route exact path='/health'
-                  element={<News
+                  element={<News1
                     pageSize={this.pageSize}
                     mode={this.state.mode}
                     country='in'
@@ -102,8 +103,8 @@ export default class App extends Component {
                   />}
                 />
                 <Route exact path='/science'
-                  element={<News
-                    pageSize={this.pageSize}
+                  element={<News1
+                    pageSize={this.pageSize}  
                     mode={this.state.mode}
                     country='in'
                     category='science'
@@ -111,7 +112,7 @@ export default class App extends Component {
                   />}
                 />
                 <Route exact path='/technology'
-                  element={<News
+                  element={<News1
                     pageSize={this.pageSize}
                     mode={this.state.mode}
                     country='in'
