@@ -1,31 +1,27 @@
-import React, { Component } from 'react';
+import React  from 'react';
 import { Link } from 'react-router-dom'
-export default class navbar extends Component {
-    constructor() {
-        super();
-        this.flag = 1        
-    }
-    tglvar = () => {
+const Navbar = (props)=> {    
+        let  flag = 1            
+    const tglvar = () => {
         let disB = document.getElementById('id-r')
         let drp = document.getElementById('dr-d-lst')           
-        if (this.flag === 1) {
+        if (flag === 1) {
             disB.style.display = 'flex'            
             disB.value = 'off'
-            this.flag = 0;     
+            flag = 0;     
             disB.classList.add('dropDown');
             drp.style.display = 'block'            
         }
         else  {
             disB.style.display = 'none'
             disB.value = 'on'
-            this.flag = 1;
+            flag = 1;
             drp.style.display = 'none'
         }
         
     }
 
-    render() {
-        let { mode } = this.props;
+            
 
         return (
             <>
@@ -46,7 +42,7 @@ export default class navbar extends Component {
                             </div>
                             <Link to="/about"><li>About</li></Link>
                             <div className="btn-theme-ctr">
-                                <button onClick={this.props.ThemeToggle} className='theme-ctr'><ion-icon name={`${mode === 'dark' ? 'sunny-outline' : 'moon-outline'}`}></ion-icon></button>
+                                <button onClick={props.ThemeToggle} className='theme-ctr'><ion-icon name={`${props.mode === 'dark' ? 'sunny-outline' : 'moon-outline'}`}></ion-icon></button>
                             </div>
                         </ul>
 
@@ -55,12 +51,13 @@ export default class navbar extends Component {
                             
                         </ul>
                         <div className="toggle-btn-ctn">
-                            <button className='toggle-btn' onClick={this.tglvar}><ion-icon name="menu-outline"></ion-icon></button>
+                            <button className='toggle-btn' onClick={tglvar}><ion-icon name="menu-outline"></ion-icon></button>
                         </div>
                     </nav>
                 </header>
             </>
         )
 
-    }
+    
 }
+export default Navbar;

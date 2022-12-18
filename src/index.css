@@ -27,8 +27,13 @@ header {
   justify-content: center;
   background-color: #05001c;
   flex-direction: column-reverse;
-  color: #fff;
+  color: #fff;    
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 10;  
 }
+
 .main ul {
   list-style: none;
   display: flex;
@@ -374,9 +379,9 @@ header {
 }
 
 /* ------------------------------Loader-------------------- */
-.loader {
-  width: 25vh;
-  height: 25vh;
+.loader {  
+  width: 5vh;
+  height: 5vh;
   border-radius: 50%;
   perspective: 800px;
 }
