@@ -8,10 +8,10 @@ const News = (props) => {
   const [loading, setloading] = useState(true);
   const [page, setpage] = useState(1);
   const [totalResults, settotalResults] = useState(0);
-  // document.title = `NewsCrew - ${capitalize(props.category)}`;
   const capitalize = (str) => {
     return str.charAt(0).toUpperCase() + str.slice(1);
   }
+  
 
   const UpdateNews = async () => {
     props.setProgress(10);
@@ -28,12 +28,14 @@ const News = (props) => {
   }
   useEffect(() => {
     UpdateNews();
+    document.title = `NewsCrew - ${capitalize(props.category)}`;
+    //eslint-disable-next-line
   }, [])
 
   const fetchMoreData = async () => {
-    setpage(page + 1);
     setloading(true)
-    const url = `https://newsapi.org/v2/top-headlines?country=${props.country}&category=${props.category}&apiKey=${props.apiKey}&page=${page}&pageSize=${props.pageSize}`
+    const url = `https://newsapi.org/v2/top-headlines?country=${props.country}&category=${props.category}&apiKey=${props.apiKey}&page=${page+1}&pageSize=${props.pageSize}`
+    setpage(page + 1);
     let data = await fetch(url);
     let parseData = await data.json();
     setarticles(articles.concat(parseData.articles));
@@ -44,7 +46,7 @@ const News = (props) => {
   return (
     <>
       <div>
-        <h4 align="center" className={`Top-hd-ttl ${props.mode === 'dark' ? 'dark-theme-text' : 'light-theme-text'}`} style={{marginTop:'15vh'}}>
+        <h4 align="center" className={`Top-hd-ttl ${props.mode === 'dark' ? 'dark-theme-text' : 'light-theme-text'}`} style={{ marginTop: '15vh' }}>
           Top Headlines - {capitalize(props.category)}
         </h4>
         {loading && <Spinner />}

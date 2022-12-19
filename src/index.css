@@ -27,11 +27,11 @@ header {
   justify-content: center;
   background-color: #05001c;
   flex-direction: column-reverse;
-  color: #fff;    
+  color: #fff;
   position: fixed;
   top: 0;
   width: 100%;
-  z-index: 10;  
+  z-index: 10;
 }
 
 .main ul {
@@ -125,7 +125,7 @@ header {
   cursor: pointer;
   transition: 0.4s ease-in-out;
 }
-.dropDownBtn:hover{
+.dropDownBtn:hover {
   color: #cdcbcb;
 }
 .dropDownContent {
@@ -142,14 +142,14 @@ header {
   -ms-border-radius: 4vh;
   -o-border-radius: 4vh;
 }
-.dropDownContent a{
+.dropDownContent a {
   color: #ece9e9 !important;
   padding: 2vh 0.4vw;
   text-decoration: none;
   cursor: pointer;
   display: block;
 }
-.dropDownContent li:hover{
+.dropDownContent li:hover {
   color: #cdcbcb;
 }
 .dropDown:hover .dropDownContent {
@@ -198,9 +198,8 @@ header {
 .custom-card::-webkit-scrollbar {
   width: 0;
 }
- .badge{
+.badge {
   font-size: 2vh;
-  
 }
 .toggle-btn-ctn {
   display: none;
@@ -325,7 +324,7 @@ header {
 .news-dtl-btn:hover {
   background-color: #034bb8;
 }
-.smalltxtTag{
+.smalltxtTag {
   font-size: 1.5vh;
   color: #8b8b8b;
 }
@@ -379,7 +378,7 @@ header {
 }
 
 /* ------------------------------Loader-------------------- */
-.loader {  
+.loader {
   width: 5vh;
   height: 5vh;
   border-radius: 50%;
